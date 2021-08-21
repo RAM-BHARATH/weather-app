@@ -4,7 +4,7 @@ const getCity = (
     <div className='form'>
       <input type="text" name="in-city" id="in-city" className='input' autocomplete="off" />
       <div className='search' id='search'>
-        <img src="../src/search.svg" alt="Search" />
+        <img src="/assets/search.svg" alt="Search" />
       </div>
     </div>
   </div>
