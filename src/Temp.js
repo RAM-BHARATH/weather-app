@@ -11,7 +11,7 @@ const getCity = createElement("div", null, createElement("div", {
   className: "search",
   id: "search"
 }, createElement("img", {
-  src: "/assets/search.svg",
+  src: "./assets/search.svg",
   alt: "Search"
 }))));
 const displayContainer = createElement("div", {
