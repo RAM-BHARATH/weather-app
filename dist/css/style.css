@@ -1,0 +1,85 @@
+
+#content{
+    width: 100vw;
+    height:100vh;
+    background-image: url('../assets/mountain-min3.jpg');
+    background-size: cover;
+    text-align: start;
+    font-size: 16px;
+}
+
+h1{
+    font-size: 4.5em;
+}
+h3{
+    font-size: 3em;
+}
+p{
+    font-size: 2em;
+}
+
+.form{
+    margin: 0 auto;
+    display: flex;
+    /* background-color: rgb(0, 0, 0); */
+    /* width: 100%; */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: none;
+    font-size: 3em;
+    /* border: 2px #000 solid; */
+    border-radius: 15px;
+}
+.input{
+    height:80px;
+    width:70vw;
+    display: block;
+    box-sizing: border-box;
+    outline:none;
+    border-radius: 10px;
+    margin: 0 10px 0 0;
+}
+.search img{
+    width:68px;
+    /* margin: 0 0 0 10px; */
+}
+.display-container{
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-around;
+    height: 700px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button{
+    width: fit-content;
+    font-size: 2em;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: aqua;
+}
+.first-container{
+    /* max-width: 900px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* min-width:fit-content; */
+    width: 45%;
+    /* height: max-content; */
+    margin: auto ;
+    /* background-color: #000; */
+    border-radius: 20px;
+    color:rgb(233, 233, 233);
+}
+.first-cont-item{
+    margin: 10px 0;
+    padding: 5px;
+}
+.second-container{
+    width:40%;
+    /* background-color: #fff; */
+    justify-content: center;
+    margin: auto;
+}
