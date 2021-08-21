@@ -66,6 +66,8 @@ p{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* text-align: end; */
+    align-items: flex-end;
     /* min-width:fit-content; */
     width: 45%;
     /* height: max-content; */
