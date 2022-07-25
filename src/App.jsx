@@ -9,6 +9,7 @@ async function getWeather(city){
             city='Delhi';
         }
         const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
+        // const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&appid=${key}`)
     
         const data = await res.json();
     

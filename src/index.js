@@ -1,4 +1,5 @@
 import { getWeather, kelvinsToCelsius, kelvinsToFahrenheit,speedConverter,modeToggler } from "./App";
+import { cityNotFound } from "./CityNotFound";
 import { getCity, displayContainer } from "./Temp";
 
 const content = document.getElementById('content');
@@ -18,18 +19,47 @@ const humidity = document.getElementById('humidity');
 const windSpeed = document.getElementById('wind-speed');
 const toggleButton = document.getElementById('toggle-button');
 
+
 let mode = 0; //0 for Celsius, 1 for fahrenheit;
 let ogTemp = 0;
 let ogFeelsLike = 0;
 // const weatherIcon = 
 
+inCity.addEventListener('keydown', async (e)=>{
+    if(e.keyCode==13){
+        const inputCity = inCity.value.toLowerCase();
+        console.log("In city :"+inputCity);
+        const data = await getWeather(inputCity);
+        if(data.cod=="200"){
+            updateFirstContainer(data);
+            updateSecondContainer(data);
+        }else if(data.cod==404){
+            notFound();
+        }
+    }
+})
+
+function notFound(){
+    console.log("Wrong city");
+    getCity.insertAdjacentElement('afterend',cityNotFound);
+    const cityNotFoundEl = document.getElementById("city-not-found");
+    cityNotFoundEl.style.display='block';
+    setTimeout(() => {
+        cityNotFoundEl.style.display='none';
+        cityNotFoundEl.remove();
+    }, 3000);
+}
+
 search.addEventListener('click',async ()=>{
     const inputCity = inCity.value.toLowerCase();
-    console.log(inputCity);
+    console.log("Search: "+inputCity);
     const data = await getWeather(inputCity);
-    
-    updateFirstContainer(data);
-    updateSecondContainer(data);
+    if(data.cod=="200"){
+        updateFirstContainer(data);
+        updateSecondContainer(data);
+    }else if(data.cod=='404'){
+        notFound();
+    }
 });
 
 toggleButton.addEventListener('click',()=>{
@@ -42,7 +72,9 @@ toggleButton.addEventListener('click',()=>{
 
 function updateFirstContainer(data){
     inCity.value=''; 
+    console.log("update first 1:");
     console.log(data);
+    console.log("update first 2: ")
     console.log(data.dt);
     weatherDescription.innerText=data.weather[0].main;
     weatherCity.innerText = data.name;
